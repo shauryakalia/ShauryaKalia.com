@@ -5,34 +5,31 @@ import {
   FaDribbbleSquare,
   FaBehanceSquare,
   FaTwitterSquare,
+  FaInstagramSquare
 } from "react-icons/fa"
 
 const data = [
+  
   {
     id: 1,
-    icon: <FaFacebookSquare className="social-icon"></FaFacebookSquare>,
-    url: "https://www.twitter.com",
+    icon: <FaInstagramSquare className="social-icon"></FaInstagramSquare>,
+    url: "https://www.instagram.com/shaurya.kalia",
   },
   {
     id: 2,
     icon: <FaLinkedin className="social-icon"></FaLinkedin>,
-    url: "https://www.twitter.com",
+    url: "https://www.linkedin.com/in/shauryakalia/",
   },
   {
     id: 3,
-    icon: <FaDribbbleSquare className="social-icon"></FaDribbbleSquare>,
-    url: "https://www.twitter.com",
+    icon: <FaTwitterSquare className="social-icon"></FaTwitterSquare>,
+    url: "https://www.twitter.com/shauryakalia",
   },
   {
     id: 4,
-    icon: <FaBehanceSquare className="social-icon"></FaBehanceSquare>,
-    url: "https://www.twitter.com",
-  },
-  {
-    id: 5,
-    icon: <FaTwitterSquare className="social-icon"></FaTwitterSquare>,
-    url: "https://www.twitter.com",
-  },
+    icon: <FaFacebookSquare className="social-icon"></FaFacebookSquare>,
+    url: "https://www.facebook.com/shaurya.kalia",
+  }
 ]
 const links = data.map(link => {
   return (

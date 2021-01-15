@@ -1,2 +1,1 @@
-# ShauryaKalia.com
-Personal Blog / Portfolio
+Portfolio And Personal Blog

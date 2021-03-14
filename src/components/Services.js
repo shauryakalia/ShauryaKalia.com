@@ -7,7 +7,7 @@ import services from "../constants/services"
     <Title title="services"></Title>
     <div className="section-center services-center">
       {services.map(service => {
-        const {id,title,icon, text} = service
+        const { id, title, icon, text } = service
         return (
           <article key={id} className="service">
             {icon}

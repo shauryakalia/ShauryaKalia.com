@@ -8,11 +8,38 @@ import Projects from "../components/Projects"
 import Blogs from "../components/Blogs"
 
 
-export default () => {
+export default ({ data }) => {
+
+  const {allStrapiProjects: {nodes: projects}} = data
   return <Layout>
       <Hero />
       <Services />
       <Jobs />
+      <Projects projects={projects} title="featured projects" showLink/>
   </Layout>
 }
-// ...GatsbyImageSharpFluid
+
+export const query = graphql`
+  {
+    allStrapiProjects(filter: {featured: {eq: true}}) {
+      nodes {
+        id
+        github
+        description
+        title
+        url
+        coverImage {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        stack {
+          id
+          text
+        }
+      }
+    }
+  }
+`

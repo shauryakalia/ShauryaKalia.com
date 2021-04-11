@@ -30,6 +30,13 @@ const Project = ({description, title, url, stack, github, coverImage, index}) =>
   </article>)
 }
 
-Project.propTypes = {}
+Project.propTypes = {
+  title:PropTypes.string.isRequired,
+  github:PropTypes.string.isRequired,
+  description:PropTypes.string.isRequired,
+  url:PropTypes.string.isRequired,
+  image:PropTypes.object.isRequired,
+  stack:PropTypes.arrayOf(PropTypes.Object).isRequired,
+}
 
 export default Project

@@ -870,9 +870,11 @@ Pages
   color: var(--clr-black)
 },
 .error-page,
-.about-page,
+.about-page {
+  background: var(--clr-black);
+},
 .contact-page {
-  background: var(--clr-grey-10);
+  background: var(--clr-black);
   min-height: calc(100vh - 5rem - 9rem);
 }
 .error-page {

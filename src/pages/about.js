@@ -6,14 +6,16 @@ import Image from "gatsby-image"
 
 const About = ({data}) => {
   const {allStrapiAbout: {nodes: About }} = data;
-  const {image,title,info,stack} = About[0];
+  const {image,title,text,stack} = About[0];
   return <Layout>
       <section className="about-page">
       <div className="section-center about-center">
         <Image fluid={image.childImageSharp.fluid} className="about-img"/>
         <article className="about-text">
           <Title title={title} />
-          <p>{info}</p>
+          {text.map(item => {
+                return <p key={item.id}>{item.text}</p>
+              })}
           <div className="about-stack">
               {stack.map(item => {
                 return <span key={item.id}>{item.text}</span>
@@ -34,7 +36,10 @@ export const query = graphql`
           id
           text
         }
-        info
+        text {
+          id
+          text
+        }
         image {
           childImageSharp {
             fluid {

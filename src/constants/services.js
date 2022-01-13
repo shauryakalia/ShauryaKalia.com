@@ -5,7 +5,7 @@ export default [
     id: 1,
     icon: <FaCode className="service-icon" />,
     title: "web development",
-    text: `End to end Website development using node.js, react.js, postgresql, mongoDB`,
+    text: `End to end Website development using Node.js, React.js, Postgresql, MongoDB`,
   },
   {
     id: 2,

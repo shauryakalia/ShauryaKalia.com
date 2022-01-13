@@ -5,7 +5,8 @@ import {
   FaDribbbleSquare,
   FaBehanceSquare,
   FaTwitterSquare,
-  FaInstagramSquare
+  FaInstagramSquare,
+  FaGithubSquare
 } from "react-icons/fa"
 
 const data = [
@@ -27,8 +28,8 @@ const data = [
   },
   {
     id: 4,
-    icon: <FaFacebookSquare className="social-icon"></FaFacebookSquare>,
-    url: "https://www.facebook.com/shaurya.kalia",
+    icon: <FaGithubSquare className="social-icon"></FaGithubSquare>,
+    url: "https://github.com/shauryakalia",
   }
 ]
 const links = data.map(link => {

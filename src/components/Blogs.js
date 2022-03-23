@@ -14,7 +14,7 @@ export const Blogs = ({blogs, title, showLink}) => {
        }
      </div>
      {
-       showLink &&  <Link to="/blog" className="btn center-btn">Blog</Link>
+       showLink &&  <Link to="/blog" className="btn center-btn">Read More</Link>
      }
   </section>
 }

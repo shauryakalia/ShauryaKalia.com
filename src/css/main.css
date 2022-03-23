@@ -534,9 +534,22 @@ Hero
     left: -650px !important;
     position: fixed;
   }
+  .herovid {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: calc(50vh - 75px);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: 1;
+    overflow: hidden;
+    margin-bottom: 80px;
+  }
 	.hero__vid {
-    min-height: 100%;
-    background-image: unset;
+    display: none;
+    /* min-height: 100%; */
+    /* background-image: unset; */
   }
 }
 

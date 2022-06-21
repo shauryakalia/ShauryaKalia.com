@@ -10,7 +10,7 @@ const About = ({data}) => {
   return <Layout>
       <section className="about-page">
       <div className="section-center about-center">
-        <Image fluid={image.childImageSharp.fluid} className="about-img"/>
+        <Image fluid={image.localFile.childImageSharp.fluid} className="about-img"/>
         <article className="about-text">
           <Title title={title} />
           {text.map(item => {
@@ -41,9 +41,11 @@ export const query = graphql`
           text
         }
         image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
+          localFile {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }

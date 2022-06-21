@@ -4,13 +4,13 @@ import { graphql } from "gatsby"
 import Projects from "../components/Projects"
 
 const ProjectsPage = ({
-  data:{allStrapiProjects:{nodes:projects}}
+  data: { allStrapiProjects: { nodes: projects } }
 }) => {
   return (
     <Layout>
-    <section className="proejcts-page">
-      <Projects projects={projects} title="projects" />
-    </section>
+      <section className="proejcts-page">
+        <Projects projects={projects} title="projects" />
+      </section>
     </Layout>)
 }
 
@@ -24,11 +24,13 @@ export const query = graphql`
         title
         url
         coverImage {
+          localFile {
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid
             }
           }
+        }
         }
         stack {
           id

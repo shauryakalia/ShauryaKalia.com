@@ -19,8 +19,8 @@ export default ({ data }) => {
 
   return <Layout>
     <Helmet>
-        <script src={withPrefix('vwo.js')} type="text/javascript" />
-        <script src={withPrefix('hotjar.js')} type="text/javascript"></script>
+        {/* <script src={withPrefix('vwo.js')} type="text/javascript" /> */}
+        {/* <script src={withPrefix('hotjar.js')} type="text/javascript"></script> */}
     </Helmet>
       <Hero />
       <Services />

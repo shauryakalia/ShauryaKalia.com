@@ -1,5 +1,5 @@
 import React from "react"
-import { FaCode, FaBitcoin } from "react-icons/fa"
+import { FaCode, FaBitcoin, FaPhotoVideo } from "react-icons/fa"
 export default [
   {
     id: 1,
@@ -11,6 +11,12 @@ export default [
     id: 2,
     icon: <FaBitcoin className="service-icon" />,
     title: "blockchain development",
-    text: `Crypto and Smart Contracts development using Ethereum, Solidity, Truffle and Hyperledger`,
+    text: `Smart Contracts and NFTs development using Ethereum, Solidity, Web3, Truffle and Hyperledger`,
+  },
+  {
+    id: 3,
+    icon: <FaPhotoVideo className="service-icon" />,
+    title: "video editing",
+    text: `Smooth and high quality video editing using Premiere pro and DaVince Resolve`,
   },
 ]

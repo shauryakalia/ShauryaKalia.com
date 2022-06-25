@@ -685,6 +685,9 @@ Jobs
 .job-icon {
   color: var(--clr-primary-5);
 }
+.mkdwn a {
+  color: rgb(44, 174, 186)
+}
 @media screen and (min-width: 992px) {
   .jobs-center {
     width: 90vw;
@@ -1093,27 +1096,28 @@ Blog Template
 */
 .blog-template {
   padding: 5rem 0;
+  color: var(--clr-primary-7)
 }
 
 .blog-template h1 {
   color: var(--clr-white)
-},
+}
 .blog-template h2 {
   text-align: center;
 }
 .blog-template p {
   color: var(--clr-primary-7)
-},
-.blog-template ul {
-  margin-top: 2rem;
-  display: inline-block;
 }
-.blog-template ul li {
-  background: var(--clr-grey-9);
-  color: var(--clr-grey-5);
-  padding: 0.5rem 1rem;
-  margin: 1rem 0;
-  text-transform: uppercase;
+.blog-template ul {
+  display: inline-block;
+  color: var(--clr-primary-7) !important;
+  padding: 0.2rem 1rem;
+  margin: 0.2rem 1rem;
+}
+.blog-template li {
+  color: var(--clr-primary-7) !important;
+  padding: 0.2rem 1rem;
+  margin: 0.2rem 1rem;
 }
 
 .blog-template blockquote {
@@ -1132,8 +1136,8 @@ Blog Template
   border-radius: var(--radius);
 }
 .blog-template img {
-  width: 25rem;
-  height: 25rem;
+  width: 50%;
+  height: 50%;
   margin: 3rem 0;
   object-fit: cover;
   margin-left: auto;

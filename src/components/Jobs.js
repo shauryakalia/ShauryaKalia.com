@@ -4,6 +4,8 @@ import { FaAlignRight, FaAngleDoubleRight } from "react-icons/fa"
 import { graphql, useStaticQuery } from "gatsby"
 import { Link } from "gatsby"
 
+import ReactMarkdown from "react-markdown"
+
 const query = graphql`
 {
   allStrapiExperiences(sort: {fields: strapiId, order: DESC}) {
@@ -50,7 +52,7 @@ const Jobs = () => {
           description.map((item) => {
              return <div key={item.id} className="job-desc">
               <FaAngleDoubleRight className="job-icon"></FaAngleDoubleRight>
-              <p>{item.text}</p>
+              <ReactMarkdown className="mkdwn" source={item.text} />
              </div>
           })
         }

@@ -9,7 +9,7 @@ const ProjectsPage = ({
   return (
     <Layout>
       <section className="proejcts-page">
-        <Projects projects={projects} title="projects" />
+        <Projects projects={projects} title="freelance / Personal projects" />
       </section>
     </Layout>)
 }

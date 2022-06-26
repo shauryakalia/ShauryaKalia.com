@@ -7,9 +7,9 @@ import { Disqus } from 'gatsby-plugin-disqus';
 const ComponentName = ({ data }) => {
   const { content } = data.blog
   const disqusConfig = {
-    url: window.location.href,
-    identifier: window.location.pathName,
-    title: window.location.pathName,
+    url: typeof window !== 'undefined' ? window.location.href: 'https://shauryakalia.com',
+    identifier:  typeof window !== 'undefined' ? window.location.pathName: `blog/${data.blog}`,
+    title: typeof window !== 'undefined' ? window.location.pathName: `blog/${data.blog}`,
   }
   return <Layout>
     <section className="blog-template">

@@ -224,13 +224,14 @@ Navbar
 }
 .nav-center {
   width: 90vw;
-  max-width: 1170px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 .nav-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  right: 20%;
 }
 .nav-header img {
   margin-bottom: 0.375rem;
@@ -476,7 +477,7 @@ Hero
     grid-column: 6/-1;
   }
 }
-@media screen and (min-width: 1170px) {
+@media screen and (min-width: 1300px) {
   .hero h4 {
     font-size: 1rem;
   }

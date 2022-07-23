@@ -532,15 +532,15 @@ Hero
 }
 @media only screen and (max-width: 480px) {
   .centerdiv {
-    text-align: left;
+    /* text-align: left; */
     left: -650px !important;
-    position: fixed;
+    position: relative;
   }
   .herovid {
     position: relative;
     display: block;
     width: 100%;
-    height: calc(50vh - 75px);
+    height: calc(80vh - 75px);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -549,7 +549,8 @@ Hero
     margin-bottom: 80px;
   }
 	.hero__vid {
-    display: none;
+    display: block;
+    /* left: -25%; */
     /* min-height: 100%; */
     /* background-image: unset; */
   }

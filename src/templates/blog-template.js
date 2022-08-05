@@ -16,9 +16,9 @@ const ComponentName = ({ data }) => {
       <div className="section-center">
         <article className="blog-content">
           <ReactMarkdown class="mkdwn" source={content} />
-          <Disqus
+          {/* <Disqus
             config={disqusConfig}
-        />
+          /> */}
         </article>
         <Link to="/blog" className="btn center-btn">
           blogs

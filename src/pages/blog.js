@@ -10,7 +10,7 @@ const Blog = ({
 }) => {
   return <Layout>
     <section className="blog-page">
-      <Blogs  blogs={blogs} title="blogs" />
+      <Blogs  blogs={blogs} title="blogs" showCategories/>
     </section>
   </Layout> 
 }

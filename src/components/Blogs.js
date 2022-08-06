@@ -8,6 +8,7 @@ const CATEGORIES = [ 'all', 'tech', 'travel', 'abstract', 'books'];
 export const Blogs = ({blogs, title, showLink, showCategories}) => {
   const [category, setCategory] = useState(null);
   const [filteredBlogs, setFilteredBlogs] = useState(blogs);
+  const [ value, setValue ] = useState(0);
 
   useEffect(() => {
     if(category === 'all') {
@@ -23,12 +24,14 @@ export const Blogs = ({blogs, title, showLink, showCategories}) => {
 
   return <section className="section">
      <Title title={title} />
-    {showCategories && 
+    {showCategories &&
       <div>
-        <nav class="">
+        <nav className="section-center">
         {
-          CATEGORIES.map((category) => {
-            return <button key={category} onClick={() => setCategory(category)}>{ category }</button> 
+          CATEGORIES.map((category, index) => {
+            return <button key={category} onClick={() => {setCategory(category);setValue(index)}} className={`job-btn ${index === value && `active-btn`}`}>
+              { category }
+              </button> 
           })
         }
         </nav>

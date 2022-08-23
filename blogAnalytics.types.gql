@@ -1,0 +1,8 @@
+ type blogAnalytics {
+    slug: String!
+    hits: Int!
+ }
+
+ type Query {
+    allBlogAnalytics: [blogAnalytics!]!
+ }

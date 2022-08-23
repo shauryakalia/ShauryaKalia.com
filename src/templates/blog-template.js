@@ -1,11 +1,40 @@
-import React from "react"
+import React, {useEffect, useState} from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import ReactMarkdown from "react-markdown"
-import { Disqus } from 'gatsby-plugin-disqus';
+import { Disqus } from 'gatsby-plugin-disqus'
+import axios from "axios";
 
 const ComponentName = ({ data }) => {
-  const { content } = data.blog
+  const { content, slug } = data.blog
+  let [hits, setHits] = useState(0);
+
+  useEffect(() => {
+    axios("/api/get-blog-analytics").then(result => {
+      if (result.status !== 200) {
+        console.error("Error loading analytics");
+        console.error(result);
+      }
+      let correspondingBlogAnalytics;
+      result.data.blogAnalytics.map(analytics => {
+        if(analytics.slug === slug) {
+          correspondingBlogAnalytics = analytics;
+        }
+      });
+      setHits(correspondingBlogAnalytics.hits+1);
+      axios.post("/api/update-blog-analytics", {
+        id: correspondingBlogAnalytics._id, 
+        slug: correspondingBlogAnalytics.slug, 
+        hits: correspondingBlogAnalytics.hits+1
+      }).then(result => {
+        if (result.status !== 200) {
+          console.error("Error loading analytics");
+          console.error(result);
+        }
+      });
+    });
+  }, []);
+
   const disqusConfig = {
     url: typeof window !== 'undefined' ? window.location.href: 'https://shauryakalia.com',
     identifier:  typeof window !== 'undefined' ? window.location.pathName: `blog/${data.blog}`,
@@ -20,6 +49,9 @@ const ComponentName = ({ data }) => {
             config={disqusConfig}
           /> */}
         </article>
+        <div className="section-center">
+          Views : {hits}
+        </div>
         <Link to="/blog" className="btn center-btn">
           blogs
         </Link>
@@ -31,7 +63,8 @@ const ComponentName = ({ data }) => {
 export const query = graphql`
   query GetSingleBlog($slug: String) {
     blog: strapiBlogs(slug: { eq: $slug }) {
-      content
+      content,
+      slug
 
     }
   }

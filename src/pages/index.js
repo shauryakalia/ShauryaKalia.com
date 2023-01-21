@@ -23,7 +23,7 @@ export default ({ data }) => {
         {/* <script src={withPrefix('hotjar.js')} type="text/javascript"></script> */}
     </Helmet>
       <Hero />
-      <Services />
+      {/* <Services /> */}
       <Jobs />
       <Projects projects={projects} title="freelance / personal projects" showLink/>
       <Blogs blogs={blogs} title="blogs" showLink />

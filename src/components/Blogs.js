@@ -20,7 +20,7 @@ export const Blogs = ({blogs, title, showLink, showCategories}) => {
         console.error(result);
       }
       setBlogAnalytics(result.data.blogAnalytics);
-      let slugs = result.data.blogAnalytics.map(analytic => analytic.slug);
+      let slugs = result?.data?.blogAnalytics?.map(analytic => analytic.slug);
       setBlogSlugs(slugs);
     });
   }, []);
@@ -58,9 +58,6 @@ export const Blogs = ({blogs, title, showLink, showCategories}) => {
       setFilteredBlogs(newFilter);
     }
   }, [category]);
-
-
-  console.log('blogs', blogs);
 
   return <section className="section">
      <Title title={title} />

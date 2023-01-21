@@ -797,10 +797,23 @@ Projects
   .project-img {
     height: 19rem;
   }
+  .job-img {
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    height: 20%;
+    z-index: 1;
+  }
 }
 @media screen and (min-width: 768px) {
   .project-img {
     height: 22rem;
+  }
+  .job-img {
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    width: 30%;
+    height: 30%;
+    z-index: 1;
   }
 }
 @media screen and (min-width: 992px) {
@@ -815,6 +828,13 @@ Projects
     height: 30rem;
     border-radius: var(--radius);
     box-shadow: var(--dark-shadow);
+  }
+  .job-img {
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    width: 35%;
+    height: 35%;
+    z-index: 1;
   }
   .project-info {
     border-radius: var(--radius);
@@ -1146,4 +1166,11 @@ Blog Template
   margin-left: auto;
   margin-right: auto;
   display: block;
+}
+.job-img {
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  height: 30%;
+  width: 30%;
+  z-index: 1;
 }

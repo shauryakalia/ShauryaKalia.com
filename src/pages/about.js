@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Title from "../components/Title"
+import Services from "../components/Services"
 import Image from "gatsby-image"
 
 const About = ({data}) => {
@@ -24,6 +25,7 @@ const About = ({data}) => {
         </article>
       </div>
     </section>
+    <Services />
   </Layout>
 }
 

@@ -16,12 +16,17 @@ const ComponentName = ({ data }) => {
         console.error(result);
       }
       let correspondingBlogAnalytics;
-      result.data.blogAnalytics.map(analytics => {
-        if(analytics.slug === slug) {
-          correspondingBlogAnalytics = analytics;
+      for(var i=0; i<result.data?.blogAnalytics?.length; i++) {
+        if(result.data.blogAnalytics[i].slug === slug) {
+          correspondingBlogAnalytics = result.data.blogAnalytics[i];
         }
-      });
-      setHits(correspondingBlogAnalytics.hits+1);
+      }
+      // result.data?.blogAnalytics?.map(analytics => {
+      //   if(analytics.slug === slug) {
+      //     correspondingBlogAnalytics = analytics;
+      //   }
+      // });
+      setHits(correspondingBlogAnalytics?.hits+1);
       axios.post("/api/update-blog-analytics", {
         id: correspondingBlogAnalytics._id, 
         slug: correspondingBlogAnalytics.slug, 
@@ -49,8 +54,10 @@ const ComponentName = ({ data }) => {
             config={disqusConfig}
           /> */}
         </article>
-        <div className="section-center">
-          Views : {hits}
+        <div className="about-stack">
+          <span>
+            Views : {hits}
+          </span>
         </div>
         <Link to="/blog" className="btn center-btn">
           blogs

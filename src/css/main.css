@@ -832,8 +832,8 @@ Projects
   .job-img {
     border-top-left-radius: var(--radius);
     border-top-right-radius: var(--radius);
-    width: 35%;
-    height: 35%;
+    max-width:50%;
+    height:auto;
     z-index: 1;
   }
   .project-info {
@@ -1170,7 +1170,7 @@ Blog Template
 .job-img {
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
-  height: 30%;
-  width: 30%;
-  z-index: 1;
+  max-width:50%;
+    height:auto;
+    z-index: 1;
 }

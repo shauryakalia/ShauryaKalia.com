@@ -575,6 +575,7 @@ Services
   background: var(--clr-grey-8);
   padding: 3rem 1.5rem;
   margin-bottom: 2rem;
+   margin-left: 10px;
   border-radius: var(--radius);
   text-align: center;
   -webkit-transition: var(--transition);
@@ -770,6 +771,9 @@ Projects
   margin-bottom: 1rem;
 }
 .project-stack span,
+.about-stack {
+  margin-left: 10px;
+}
 .about-stack span {
   display: inline-block;
   background: var(--clr-grey-9);
@@ -1006,7 +1010,7 @@ About Page
 ===============
 */
 .about-page {
-  padding: 7rem 0;
+  padding: 7rem 1rem;
 }
 .about-img {
   margin-bottom: 2rem;
@@ -1014,14 +1018,19 @@ About Page
 }
 .about-text .section-title {
   margin-bottom: 2rem;
+
+  margin-left: 20px;
+  margin-right: 20px;
   text-align: left;
 }
 .about-text .underline {
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: 10px;
+  margin-right: 20px;
 }
 .about-text p {
   line-height: 2;
+  margin-left: 20px;
+  margin-right: 20px;
   color: var(--clr-primary-7)
 }
 .stack-container {
@@ -1054,6 +1063,25 @@ About Page
     margin-bottom: 0;
   }
   .about-text {
+    padding-left: 20px;
+    padding-right: 20px;
+    grid-column: 6 / -1;
+  }
+}
+@media screen and (min-width: 800px) {
+  .about-center {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    column-gap: 4rem;
+  }
+  .about-img {
+    grid-column: 1 / span 5;
+    margin-bottom: 0;
+  }
+  .about-text {
+    padding-left: 20px;
+    padding-right: 20px;
     grid-column: 6 / -1;
   }
 }

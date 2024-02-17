@@ -804,7 +804,8 @@ Projects
   .job-img {
     border-top-left-radius: var(--radius);
     border-top-right-radius: var(--radius);
-    height: 20%;
+    max-width:45%;
+    max-height: 45%;
     z-index: 1;
   }
 }
@@ -815,8 +816,8 @@ Projects
   .job-img {
     border-top-left-radius: var(--radius);
     border-top-right-radius: var(--radius);
-    width: 30%;
-    height: 30%;
+    max-width:65%;
+    max-height:65%;
     z-index: 1;
   }
 }
@@ -836,8 +837,8 @@ Projects
   .job-img {
     border-top-left-radius: var(--radius);
     border-top-right-radius: var(--radius);
-    max-width:50%;
-    height:auto;
+    max-width: 65%;
+    max-height: 65%;
     z-index: 1;
   }
   .project-info {
@@ -884,14 +885,30 @@ Blog
 .blog-card {
   display: grid;
   grid-template-rows: auto 1fr auto;
+  padding: 1.5rem 1rem;
+  position: relative; /* Needed for absolute positioning of the overlay */
+  overflow: hidden; /* Ensures the overlay is contained within the card borders */
+}
+
+.blog-card::before {
+  content: ""; /* Required for a pseudo-element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay color */
+  opacity: 0; /* Hide overlay by default */
+  transition: opacity 0.3s ease; /* Smooth transition for the overlay */
+}
+
+.blog-card:hover::before {
+  opacity: 1; /* Show overlay on hover */
 }
 .blog-img {
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
   height: 15rem;
-}
-.blog-card {
-  padding: 1.5rem 1rem;
 }
 .blog-card h4 {
   color: var(--clr-primary-5);
@@ -1198,7 +1215,8 @@ Blog Template
 .job-img {
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
-  max-width:50%;
+  max-width:15%;
+  max-height: 15%;
     height:auto;
     z-index: 1;
 }

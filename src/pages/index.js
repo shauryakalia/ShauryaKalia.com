@@ -25,7 +25,7 @@ export default ({ data }) => {
       <Hero />
       {/* <Services /> */}
       <Jobs />
-      <Projects projects={projects} title="freelance / personal projects" showLink/>
+      {/* <Projects projects={projects} title="freelance / personal projects" showLink/> */}
       <Blogs blogs={blogs} title="blogs" showLink />
   </Layout>
 }
@@ -54,7 +54,7 @@ export const query = graphql`
         }
       }
     }
-    allStrapiBlogs(sort: {fields: date, order: DESC}, limit: 3) {
+    allStrapiBlogs(sort: {fields: date, order: DESC}, limit: 12) {
       nodes {
         category
         date(formatString: "do MMM, YYYY")

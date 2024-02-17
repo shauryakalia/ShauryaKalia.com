@@ -10,45 +10,45 @@ export const Blogs = ({blogs, title, showLink, showCategories}) => {
   const [category, setCategory] = useState(null);
   const [filteredBlogs, setFilteredBlogs] = useState(blogs);
   const [ value, setValue ] = useState(0);
-  let [blogAnalytics, setBlogAnalytics] = useState();
-  let [blogSlugs, setBlogSlugs] = useState();
+  // let [blogAnalytics, setBlogAnalytics] = useState();
+  // let [blogSlugs, setBlogSlugs] = useState();
 
-  useEffect(() => {
-    axios("/api/get-blog-analytics").then(result => {
-      if (result.status !== 200) {
-        console.error("Error loading analytics");
-        console.error(result);
-      }
-      setBlogAnalytics(result.data.blogAnalytics);
-      let slugs = result?.data?.blogAnalytics?.map(analytic => analytic.slug);
-      setBlogSlugs(slugs);
-    });
-  }, []);
+  // useEffect(() => {
+  //   axios("/api/get-blog-analytics").then(result => {
+  //     if (result.status !== 200) {
+  //       console.error("Error loading analytics");
+  //       console.error(result);
+  //     }
+  //     setBlogAnalytics(result.data.blogAnalytics);
+  //     let slugs = result?.data?.blogAnalytics?.map(analytic => analytic.slug);
+  //     setBlogSlugs(slugs);
+  //   });
+  // }, []);
 
-  useEffect(() => {
-    if (blogAnalytics?.length) {
-      blogs.forEach(blog => {
-        if (blogSlugs?.includes(blog.slug)) {
-          let correspondingBlogAnalytics;
-          blogAnalytics.map(analytics => {
-            if(analytics.slug === blog.slug) {
-              correspondingBlogAnalytics = analytics;
-            }
-          });
-          blog.hits = correspondingBlogAnalytics.hits;
-          blog.analyticsID = correspondingBlogAnalytics._id;
-        } else if (blogSlugs) {
-          axios.post("/api/create-blog-analytics", {slug: blog.slug, hits: 0}).then(result => {
-            if (result.status !== 200) {
-              console.error("Error loading analytics");
-              console.error(result);
-            }
-            blog.hits = 0;
-          });
-        }
-      });
-    }
-  }, [blogAnalytics, blogSlugs, blogs]);
+  // useEffect(() => {
+  //   if (blogAnalytics?.length) {
+  //     blogs.forEach(blog => {
+  //       if (blogSlugs?.includes(blog.slug)) {
+  //         let correspondingBlogAnalytics;
+  //         blogAnalytics.map(analytics => {
+  //           if(analytics.slug === blog.slug) {
+  //             correspondingBlogAnalytics = analytics;
+  //           }
+  //         });
+  //         blog.hits = correspondingBlogAnalytics.hits;
+  //         blog.analyticsID = correspondingBlogAnalytics._id;
+  //       } else if (blogSlugs) {
+  //         axios.post("/api/create-blog-analytics", {slug: blog.slug, hits: 0}).then(result => {
+  //           if (result.status !== 200) {
+  //             console.error("Error loading analytics");
+  //             console.error(result);
+  //           }
+  //           blog.hits = 0;
+  //         });
+  //       }
+  //     });
+  //   }
+  // }, [blogAnalytics, blogSlugs, blogs]);
 
   useEffect(() => {
     if(category === 'all') {

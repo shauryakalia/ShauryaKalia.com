@@ -689,7 +689,7 @@ Jobs
 .job-icon {
   color: var(--clr-primary-5);
 }
-.mkdwn a {
+.blog-content a {
   color: rgb(44, 174, 186)
 }
 @media screen and (min-width: 992px) {
@@ -961,7 +961,7 @@ Footer
 */
 .footer {
   height: 9rem;
-  background: #222;
+  background: #000000;
   text-align: center;
   display: grid;
   place-items: center;
@@ -979,7 +979,7 @@ Footer
   margin: 0 auto 1rem auto;
 }
 .footer .social-link {
-  color: var(--clr-white);
+  color: var(--clr-grey-3);
 }
 .footer .social-link:hover {
   color: var(--clr-primary-5);
@@ -1219,4 +1219,58 @@ Blog Template
   max-height: 15%;
     height:auto;
     z-index: 1;
+}
+
+.blog-content {
+  /* This applies to all elements inside .blog-content */
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-content h1 {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0; /* Removes padding from the title */
+  padding-right: 0; /* Removes padding from the title */
+  width: 100%; /* Ensures the title stretches to full width */
+}
+
+
+.blog-content pre, .blog-content pre code {
+  /* Aligns code blocks to the left */
+  text-align: left;
+  /* Ensure the code block doesn't exceed the container width */
+  width: 100%;
+  overflow-x: auto; /* Adds a horizontal scrollbar if the content is too wide */
+}
+
+/* Fixed width for .blog-content content on desktops, with padding */
+@media (min-width: 768px) {
+  .blog-content {
+    width: 800px; /* Fixed width for desktop */
+    padding-left: 20px; /* Spacing from the left */
+    padding-right: 20px; /* Spacing from the right */
+  }
+
+  .blog-content h1 {
+    padding-left: 20px; /* Match the .blog-content padding to align with the text */
+    padding-right: 20px; /* Match the .blog-content padding to align with the text */
+  }
+}
+
+/* Adjustments for mobile and smaller devices */
+@media (max-width: 767px) {
+  .blog-content {
+    width: auto; /* Allows content to expand to the width of the device */
+    padding-left: 10px; /* Smaller padding on smaller screens */
+    padding-right: 10px; /* Smaller padding on smaller screens */
+  }
+
+  .blog-content h1 {
+    /* Adjust if you want different padding for title on mobile */
+    padding-left: 10px; /* Optional: match the .blog-content padding */
+    padding-right: 10px; /* Optional: match the .blog-content padding */
+  }
 }

@@ -1171,6 +1171,7 @@ Blog Template
   color: var(--clr-white)
 }
 .blog-template h2 {
+  color: var(--clr-white);
   text-align: center;
 }
 .blog-template p {
@@ -1200,7 +1201,7 @@ Blog Template
   background: #222;
   color: yellow;
   overflow-x: scroll;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1rem;
   border-radius: var(--radius);
 }
 .blog-template img {
@@ -1223,7 +1224,7 @@ Blog Template
 
 .blog-content {
   /* This applies to all elements inside .blog-content */
-  text-align: center;
+  text-align: left;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1254,7 +1255,7 @@ Blog Template
     padding-right: 20px; /* Spacing from the right */
   }
 
-  .blog-content h1 {
+  .blog-content h2 {
     padding-left: 20px; /* Match the .blog-content padding to align with the text */
     padding-right: 20px; /* Match the .blog-content padding to align with the text */
   }
@@ -1268,7 +1269,7 @@ Blog Template
     padding-right: 10px; /* Smaller padding on smaller screens */
   }
 
-  .blog-content h1 {
+  .blog-content h2 {
     /* Adjust if you want different padding for title on mobile */
     padding-left: 10px; /* Optional: match the .blog-content padding */
     padding-right: 10px; /* Optional: match the .blog-content padding */
